@@ -1,10 +1,8 @@
 const express = require('express');
-const {loadEnvFile} = require('node:process')
 const path = require('node:path')
 
 const messageRouter = require('./routes/messageRouter');
 
-loadEnvFile();
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 
