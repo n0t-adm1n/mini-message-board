@@ -29,7 +29,18 @@ router.post('/new', (req, res) => {
 
     messages.push({user: name, text: message, added: new Date()});
 
-    res.render('form')
+    // send back to root
+    res.redirect('/')
+})
+
+
+router.get('/detail/:id', (req, res) => {
+
+    const messageId = req.params.id
+
+
+
+    res.render('detail', {message: messages[messageId]})
 })
 
 router.get('/', (req, res) => {

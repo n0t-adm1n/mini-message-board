@@ -8,8 +8,10 @@
 <body>
     <h1>Message board</h1>
 
-    <% messages.map(message => { %>
-        <li> User: <%=message.user %> ,   Message: <%=message.text %>,   Time: <%=message.added %> </li>
+    <a href="/new">new message</a>
+
+    <% messages.map((message, index) => { %>
+        <li> User: <%=message.user %> ,   Message: <%=message.text %>,    <a href="/detail/<%= index %>"><button>Detail</button></a> </li>
     <% }) %>
 
 
