@@ -11,12 +11,13 @@ app.use(express.urlencoded({ extended: true }));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-const Port = process.env.PORT || 8000; 
 
 
 app.use('/', messageRouter);
 
-app.listen(Port, () => {
+const Port = process.env.PORT || 8000; 
+
+app.listen(Port, "0.0.0.0", () => {
     console.log("Server running. Listening to port ", Port );
 }).on('error', (err) => {
     console.log(err.message);
